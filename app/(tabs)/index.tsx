@@ -30,16 +30,9 @@ export default function HomeScreen() {
           partners={partners}
         />
       </View>
-      <HomeTodo
-        title='Tâches de la semaine'
-        todoItems={[
-          { text: 'Faire les courses', description: 'Acheter les produits nécessaires et vraiment nécessaire', pointsEarned: 10 },
-          { text: 'Préparer le dîner', description: 'Planifier et préparer le repas', pointsEarned: 15 },
-          { text: 'Faire la lessive', description: 'Laver le linge sale', pointsEarned: 5 }
-        ]}
-      />
+      <HomeTodo />
       <HomeCheckin
-        question='Comment vous sentez-vous cette semaine ?'
+        question='Comment vous sesntez-vous cette semaine ?'
         choices={[
           { text: 'Bien', onPress: () => console.log('Choix : Bien') },
           { text: 'Moyen', onPress: () => console.log('Choix : Moyen') },

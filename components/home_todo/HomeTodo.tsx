@@ -1,12 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { useHomeTodoViewModel } from '../home_todo/HomeTodoViewModel';
 import { FontSize } from '../typography';
 
-export type HomeTodoProps = {
-    title: string
-    todoItems: TodoItemProps[]
-}
 
 export type TodoItemProps = {
     text: string,
@@ -29,16 +26,20 @@ const TodoItem = ({ text, description, pointsEarned }: TodoItemProps) => {
     )
 }
 
-const HomeTodo = ({
-    title,
-    todoItems,
-}: HomeTodoProps) => {
+const HomeTodo = () => {
+    const { uiState } = useHomeTodoViewModel()
+    const { todos, isLoading, error } = uiState
+
+    if (isLoading) return <ActivityIndicator color="#534AB7" />
+    if (error) return <Text>{error}</Text>
+
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.title}>{"Tâches de la semaine"}</Text>
             <View style={styles.todoListContainer}>
-                {todoItems.map((item, index) => (
-                    <TodoItem key={index} text={item.text} description={item.description} pointsEarned={item.pointsEarned} />
+                {todos.map((item, index) => (
+                    <TodoItem key={index} text={item.name} description={item.assignee} pointsEarned={item.points} />
                 ))}
             </View>
 
