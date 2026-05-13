@@ -1,4 +1,5 @@
 import HomeHeader from '@/components/HomeHeader';
+import HomeCheckin from '@/components/home_checking/HomeCheckin';
 import HomeRepartition from '@/components/home_repartition/HomeRepartition';
 import HomeTodo from '@/components/home_todo/HomeTodo';
 import { Partner } from '@/components/types/partners';
@@ -35,6 +36,14 @@ export default function HomeScreen() {
           { text: 'Faire les courses', description: 'Acheter les produits nécessaires et vraiment nécessaire', pointsEarned: 10 },
           { text: 'Préparer le dîner', description: 'Planifier et préparer le repas', pointsEarned: 15 },
           { text: 'Faire la lessive', description: 'Laver le linge sale', pointsEarned: 5 }
+        ]}
+      />
+      <HomeCheckin
+        question='Comment vous sentez-vous cette semaine ?'
+        choices={[
+          { text: 'Bien', onPress: () => console.log('Choix : Bien') },
+          { text: 'Moyen', onPress: () => console.log('Choix : Moyen') },
+          { text: 'Mal', onPress: () => console.log('Choix : Mal') }
         ]}
       />
     </ScrollView>
