@@ -13,7 +13,6 @@ const HomeRepartition = ({
     informationMessage,
     partners,
 }: HomeRepartitionProps) => {
-    const repartitionValues = [62, 38]
 
     return (
         <View style={styles.container}>
@@ -27,11 +26,11 @@ const HomeRepartition = ({
                             </Text>
                         </View>
                         <Rectangle
-                            value={repartitionValues[index] ?? 0}
+                            value={partner.repartition}
                             color={partner.color}
                             accessibilityLabel={`Répartition ${partner.initials}`}
                         />
-                        <Text style={styles.partnerPercent}>{repartitionValues[index] ?? 0}%</Text>
+                        <Text style={styles.partnerPercent}>{partner.repartition}%</Text>
                     </View>
                 ))}
             </View>
@@ -40,4 +39,4 @@ const HomeRepartition = ({
 }
 
 export default HomeRepartition
- 
+
