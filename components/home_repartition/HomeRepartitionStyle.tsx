@@ -12,17 +12,31 @@ const HomeRepartitionStyle = StyleSheet.create({
         fontSize: 14,
         color: '#333',
     },
-    partnersContainer: {
-        flexDirection: 'row',
-        gap: 12,
+    partnerListContainer: {
+        gap: 14,
     },
-    partner: {
+    partnerRow: {
+        flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: 14,
+    },
+    partnerBadge: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     partnerInitials: {
-        fontSize: 12,
-        color: '#555',
+        fontSize: 16,
+        fontWeight: '700',
+    },
+    partnerPercent: {
+        minWidth: 44,
+        textAlign: 'right',
+        fontSize: 18,
+        fontWeight: '700',
+        color: '#171717',
     },
 })
 

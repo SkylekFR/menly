@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Partner } from '../types/partners'; // On réutilise le type Partner défini dans HomeHeader
+import Rectangle from '../ui/rectangle';
 import { HomeRepartitionStyle as styles } from './HomeRepartitionStyle';
 
 type HomeRepartitionProps = {
@@ -12,13 +13,25 @@ const HomeRepartition = ({
     informationMessage,
     partners,
 }: HomeRepartitionProps) => {
+    const repartitionValues = [62, 38]
+
     return (
         <View style={styles.container}>
             <Text style={styles.informationMessage}>{informationMessage}</Text>
-            <View style={styles.partnersContainer}>
+            <View style={styles.partnerListContainer}>
                 {partners.map((partner, index) => (
-                    <View key={index} style={styles.partner}>
-                        <Text style={styles.informationMessage}>{partner.initials}</Text>
+                    <View key={index} style={styles.partnerRow}>
+                        <View style={[styles.partnerBadge, { backgroundColor: `${partner.color}33` }]}>
+                            <Text style={[styles.partnerInitials, { color: partner.textColor }]}>
+                                {partner.initials}
+                            </Text>
+                        </View>
+                        <Rectangle
+                            value={repartitionValues[index] ?? 0}
+                            color={partner.color}
+                            accessibilityLabel={`Répartition ${partner.initials}`}
+                        />
+                        <Text style={styles.partnerPercent}>{repartitionValues[index] ?? 0}%</Text>
                     </View>
                 ))}
             </View>
