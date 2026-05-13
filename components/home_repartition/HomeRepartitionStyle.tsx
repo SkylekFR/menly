@@ -1,15 +1,18 @@
 
 import { StyleSheet } from 'react-native'
+import { FontSize } from '../typography'
 
 const HomeRepartitionStyle = StyleSheet.create({
     container: {
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#ffffff',
         padding: 20,
         borderRadius: 12,
+        borderColor: '#e5e5e5',
+        borderWidth: 1,
         gap: 16,
     },
     informationMessage: {
-        fontSize: 14,
+        fontSize: FontSize.base,
         color: '#333',
     },
     partnerListContainer: {
@@ -21,20 +24,20 @@ const HomeRepartitionStyle = StyleSheet.create({
         gap: 14,
     },
     partnerBadge: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+        width: 32,
+        height: 32,
+        borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
     },
     partnerInitials: {
-        fontSize: 16,
+        fontSize: FontSize.base,
         fontWeight: '700',
     },
     partnerPercent: {
         minWidth: 44,
         textAlign: 'right',
-        fontSize: 18,
+        fontSize: FontSize.lg,
         fontWeight: '700',
         color: '#171717',
     },

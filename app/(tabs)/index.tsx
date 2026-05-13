@@ -1,7 +1,8 @@
 import HomeHeader from '@/components/HomeHeader';
 import HomeRepartition from '@/components/home_repartition/HomeRepartition';
+import HomeTodo from '@/components/home_todo/HomeTodo';
 import { Partner } from '@/components/types/partners';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 const partnerA: Partner = { initials: "SA", name: "Sara", color: "#6ED7B5", textColor: "#102B25", repartition: 95 };
 const partnerB: Partner = { initials: "AL", name: "Alex", color: "#FFA77F", textColor: "#2B1510", repartition: 5 };
@@ -15,7 +16,7 @@ const partners = [partnerA, partnerB];
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <HomeHeader
         partnerA={partnerA}
         partnerB={partnerB}
@@ -28,7 +29,15 @@ export default function HomeScreen() {
           partners={partners}
         />
       </View>
-    </View>
+      <HomeTodo
+        title='Tâches de la semaine'
+        todoItems={[
+          { text: 'Faire les courses', description: 'Acheter les produits nécessaires et vraiment nécessaire', pointsEarned: 10 },
+          { text: 'Préparer le dîner', description: 'Planifier et préparer le repas', pointsEarned: 15 },
+          { text: 'Faire la lessive', description: 'Laver le linge sale', pointsEarned: 5 }
+        ]}
+      />
+    </ScrollView>
   );
 }
 
