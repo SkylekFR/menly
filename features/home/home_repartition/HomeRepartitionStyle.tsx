@@ -1,6 +1,6 @@
 
 import { StyleSheet } from 'react-native'
-import { FontSize } from '../typography'
+import { FontSize } from '../../../components/typography'
 
 const HomeRepartitionStyle = StyleSheet.create({
     container: {

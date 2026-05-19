@@ -1,8 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import { useHomeTodoViewModel } from '../home_todo/HomeTodoViewModel';
-import { FontSize } from '../typography';
+import { FontSize } from '../../../components/typography';
+import { useHomeTodoViewModel } from './HomeTodoViewModel';
 
 
 export type TodoItemProps = {
@@ -32,7 +32,6 @@ const HomeTodo = () => {
 
     if (isLoading) return <ActivityIndicator color="#534AB7" />
     if (error) return <Text>{error}</Text>
-
 
     return (
         <View style={styles.container}>

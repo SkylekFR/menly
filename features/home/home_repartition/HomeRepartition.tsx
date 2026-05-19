@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Partner } from '../types/partners'; // On réutilise le type Partner défini dans HomeHeader
-import Rectangle from '../ui/rectangle';
+import { Partner } from '../../../components/types/partners'; // On réutilise le type Partner défini dans HomeHeader
+import Rectangle from '../../../components/ui/rectangle';
 import { HomeRepartitionStyle as styles } from './HomeRepartitionStyle';
 
 type HomeRepartitionProps = {
