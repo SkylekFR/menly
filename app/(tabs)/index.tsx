@@ -2,7 +2,7 @@ import HomeHeader from '@/components/HomeHeader';
 import { Partner } from '@/components/types/partners';
 import HomeCheckin from '@/features/home/home_checking/HomeCheckin';
 import HomeRepartition from '@/features/home/home_repartition/HomeRepartition';
-import HomeTodo from '@/features/home/home_todo/HomeTodoScreen';
+import HomeTodo from '@/features/home/home_todo/presentation/HomeTodoScreen';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 const partnerA: Partner = { initials: "SA", name: "Sara", color: "#6ED7B5", textColor: "#102B25", repartition: 95 };
