@@ -3,4 +3,6 @@ export type Todo = {
     name: string
     assignee: string
     points: number
+    description?: string
+    deadline?: string
 }
