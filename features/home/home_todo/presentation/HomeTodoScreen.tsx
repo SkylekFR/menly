@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Button } from '@react-navigation/elements';
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { ActivityIndicator, Alert, StyleSheet, Text, View } from 'react-native';
 import { FontSize } from '../../../../components/typography';
@@ -29,6 +30,7 @@ const TodoItem = ({ text, description, pointsEarned }: TodoItemProps) => {
 }
 
 const HomeTodo = () => {
+    const router = useRouter()
     const { uiState, createTask } = useHomeTodoViewModel()
     const { todos, isLoading, error, isMoreTodo } = uiState
     const [showCreateTask, setShowCreateTask] = useState(false)
@@ -74,7 +76,7 @@ const HomeTodo = () => {
             </View>
             {isMoreTodo && (
                 <Button
-                    onPress={() => Alert.alert('Voir plus', 'Il y a plus de tâches disponibles.')}
+                    onPress={() => router.push('/task-list')}
                     style={styles.seeMoreButton}
                 >
                     Voir plus
